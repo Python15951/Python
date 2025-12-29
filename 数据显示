@@ -1,0 +1,22 @@
+import plotly.express as px
+import random
+import collections
+import matplotlib.pyplot
+
+number = []
+for i in range(100):
+    number.append(random.randint(1,50))
+
+
+a = sorted(collections.Counter(number).items())
+d = dict(a)
+k = list(d.keys())
+v = list(d.values())
+
+j = px.bar(x=k,y=v)
+matplotlib.pyplot.plot(k,v,'ro-')
+
+j.show()
+matplotlib.pyplot.show()
+
+print(number,a,d,k,v,j,sep='\n')
